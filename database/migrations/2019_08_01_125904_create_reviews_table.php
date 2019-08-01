@@ -20,6 +20,11 @@ class CreateReviewsTable extends Migration
             $table->text('content');
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

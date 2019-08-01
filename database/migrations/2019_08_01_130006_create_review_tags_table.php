@@ -19,6 +19,18 @@ class CreateReviewTagsTable extends Migration
             $table->softDeletes();
             $table->timestamps();
             $table->unique(['review_id', 'tag_id'], 'UNIQUE_REVIEW_TAGS');
+
+            $table->foreign('review_id')
+                ->references('id')
+                ->on('reviews')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('tag_id')
+                ->references('id')
+                ->on('tags')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
