@@ -24,9 +24,7 @@ final class ReviewRegistered
         string $content,
         int $user_id,
         array $tags,
-        string $created_at,
-        string $updated_at,
-        string $deleted_at
+        string $created_at
     ) {
         $this->id = $id;
         $this->titile = $titile;
@@ -34,8 +32,6 @@ final class ReviewRegistered
         $this->user_id = $user_id;
         $this->tags = $tags;
         $this->created_at = $created_at;
-        $this->updated_at = $updated_at;
-        $this->deleted_at = $deleted_at;
     }
 
     public function getTitle()
@@ -60,13 +56,13 @@ final class ReviewRegistered
         return $this->created_at;
     }
 
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
+    // public function getUpdatedAt()
+    // {
+    //     return $this->updated_at;
+    // }
 
-    public function getDeletedAt()
-    {
-        return $this->deleted_at;
-    }
+    // public function getDeletedAt()
+    // {
+    //     return $this->deleted_at;
+    // }
 }
